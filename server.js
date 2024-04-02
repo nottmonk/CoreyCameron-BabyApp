@@ -7,6 +7,7 @@ require('dotenv').config()
 require('./config/database')
 var babyRouter = require('./routes/baby');
 var usersRouter = require('./routes/users');
+var feedRouter = require('./routes/feed');
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/babies', babyRouter);
+app.use('/feed', feedRouter)
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

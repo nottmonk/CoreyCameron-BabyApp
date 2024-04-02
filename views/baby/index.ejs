@@ -1,19 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<%- include('../partials/header') %>
+<title>All Babies</title>
 </head>
 <body>
-test
+    <header class="header">
+        <div class="container">
+            <h1>All Babies</h1>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
     <% allBabies.forEach(b => { %>
         <tr>
-            <td><%= b.name %></td>
-            <td><%= b.dateofbirth %></td>
-            <td><%= b.gender %></td>
-            
+            <td>
+                <div>
+                    <strong>Name:</strong>
+                </div>
+            </td>
+            <td>
+                
+                <div><%= b.name %></div>
+                </td>
+            </td>
+            <td>
+                
+                    <div><strong>Date Of Birth:</strong></div>
+                </td>
+            </td>
+            <td>
+                
+                    <div><%= b.dateofbirth %></div>
+                </td>
+            </td>
+            <td>
+                
+                    <div><strong>Gender:</strong></div>
+                </td>
+            </td>
+            <td>
+                
+                    <div><%= b.gender %></div>
+                </td>
+            </td>
+            <td>
+                <a href="/feed/<%= b._id %>/new">Add Feeding Schedule</a>
+            </td>
         </tr>
-        <%  })%>
+    <%  })%>
+</tbody>
+</table>
+</div>
+</main>
 </body>
-</html>
+<%- include('../partials/footer') %>
