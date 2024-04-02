@@ -8,7 +8,8 @@ require('./config/database')
 var babyRouter = require('./routes/baby');
 var usersRouter = require('./routes/users');
 var feedRouter = require('./routes/feed');
-
+const indexRouter = require('./routes/bannana')
+const methodOverride = require('method-override')
 var app = express();
 
 // view engine setup
@@ -20,9 +21,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
 
 app.use('/babies', babyRouter);
 app.use('/feed', feedRouter)
+app.use('/', indexRouter)
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

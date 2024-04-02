@@ -4,12 +4,19 @@
     <table>
         <thead>
             <% feeding.forEach(f => { %>
+
+                <form action="/feed/<%= f._id %>?_method=DELETE"
+                    class="delete-form" method="POST">
+                    <button type="submit">X</button>
+                  </form>
+                  
     <tr>
             <td><%= f.feedingtype %></td>
-            <td><%= f.timestamp %></td>
+            <td><%= f.timestamp %></td> 
     </tr>
         </thead>
     </table>
+
         <%  })%>
 
 <%- include('../partials/footer') %>
