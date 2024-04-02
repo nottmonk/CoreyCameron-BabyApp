@@ -3,13 +3,13 @@
 <body>
     <table>
         <thead>
+            <% feeding.forEach(f => { %>
     <tr>
-        <% feeding.forEach(f => { %>
             <td><%= f.feedingtype %></td>
             <td><%= f.timestamp %></td>
     </tr>
         </thead>
     </table>
         <%  })%>
-</body>
+
 <%- include('../partials/footer') %>

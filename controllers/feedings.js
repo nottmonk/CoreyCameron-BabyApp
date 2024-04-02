@@ -26,7 +26,21 @@ const create = async (req, res) => {
     }
 }
 
+const newFed = async (req, res) =>{
+    const baby = await Baby.findById(req.params.babyid) 
+    try{ 
+        const feeding = await Feeding.find({baby: (req.params.babyid)});
+        res.render('feeding/index', {babyid: req.params.babyid, baby, feeding} )
+    } catch(err){
+        console.log(err)
+    }
+    
+    
+}
+
+
 module.exports = {
+    newFed,
     new: newFeeding,
     create,
     index

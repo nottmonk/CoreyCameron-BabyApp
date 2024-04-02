@@ -12,6 +12,7 @@ router.get("/", babysCtrl.index);
 router.get("/new", babysCtrl.new )
 router.post('/', babysCtrl.create)
 
+
 // router.post("/", babysCtrl.create);
 
 // router.get("/", babysCtrl.index);
