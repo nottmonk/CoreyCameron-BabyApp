@@ -11,7 +11,7 @@ const babys = require('../controllers/babys');
 router.get("/", babysCtrl.index);
 router.get("/new", babysCtrl.new )
 router.post('/', babysCtrl.create)
-
+router.delete('/babyid/:babyid', babysCtrl.remove)
 
 // router.post("/", babysCtrl.create);
 

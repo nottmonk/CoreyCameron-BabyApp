@@ -25,11 +25,22 @@ const create = async (req, res) => {
   }
 };
 
+const remove = async(req, res) => {
+  try{
+   await Baby.deleteOne({_id:req.params.babyid})
+    res.redirect('/babies', )
+  }catch(err){
+    console.log(err)
+  }
+}
+
+
 
 
 
 
 module.exports = {
+  remove,
   index,
   create,
   new: newBaby,

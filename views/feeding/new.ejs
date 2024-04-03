@@ -1,18 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<%- include('../partials/header') %>
 </head>
 <body>
     <form action="/feed/<%= babyid %>" method="POST">
-    <label><%= baby.name %></label>
-    <label>Feeding Type</label>
-    <input type="text" name ='feedingtype'>
-    <label>Time</label>
-    <input type="time" name="timestamp">
-    <button type="submit">Submit</button>
+    <h1 class="bbname"><%= baby.name %>:</h1>
+    <table class="infotable">
+        <tr>
+    <th><label>Feeding Type</label></th>
+    <td><select name="feedingtype">
+        <option value="Breastfeeding">Breastfeeding</option>
+        <option value="Bottle Feeding">Bottle Feeding</option>
+        <option value="Solids">Solids</option>
+        <option value="Baby Food">Baby Food</option>
+    </select>
+    </td>
+    </tr>
+    <th><label>Time</label></th>
+    <td><input type="time" name="timestamp"> 
+    </td>   
+    <tr>
+        <td colspan="2" ><button type="submit" class="submit">Submit</button>
+        </td>
+    </tr>
     </form>
+</table>
 </body>
 </html>

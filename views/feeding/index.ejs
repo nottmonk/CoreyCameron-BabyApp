@@ -1,22 +1,33 @@
 <%- include('../partials/header') %>
 </head>
 <body>
-    <table>
-        <thead>
-            <% feeding.forEach(f => { %>
+    <h1 class="bbname"> Feeding Log</h1>
+    <a href="/babies">Back</a>
+    <main class="feed">
+        <div class="containerfeed">
+            <table class="tablefeed">
+                <thead>
+                    <% feeding.forEach(f => { %>
+                        <tr>
+                            <tr>
+                                <th class="space"></th>
+                                <th> Feeding Type:</th>
+                                <th>Time</th>
+                            </tr>
+                            <td>
+                                <form action="/feed/<%= f._id %>/<%= baby._id %>?_method=DELETE" class="delete-form" method="POST">
+                                    <button type="submit" class="delete-form">Remove</button>
+                                </form>
 
-                <form action="/feed/<%= f._id %>?_method=DELETE"
-                    class="delete-form" method="POST">
-                    <button type="submit">X</button>
-                  </form>
-                  
-    <tr>
-            <td><%= f.feedingtype %></td>
-            <td><%= f.timestamp %></td> 
-    </tr>
-        </thead>
-    </table>
-
-        <%  })%>
-
+                            </td>
+                            
+                            <td><%= f.feedingtype %></td>
+                           
+                            <td><%= f.timestamp %></td> 
+                        </tr>
+                    <% }) %>
+                </thead>
+            </table>
+        </div>
+    </main>
 <%- include('../partials/footer') %>

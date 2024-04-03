@@ -12,8 +12,8 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th></th>
+                        <th><a href="/">Home</a></th>
+                        <th><a href="/babies/new">AddName</a></th>&nbsp
                         <th></th>
                     </tr>
                 </thead>
@@ -56,6 +56,12 @@
             <td>
                 <a href="/feed/babyid/<%= b._id%>">Feeding Log</a>
             </td>
+            <td>
+                <form action="/babies/babyid/<%= b._id %>?_method=DELETE"
+                    class="delete-form" method="POST">
+                    <button type="submit">Remove</button>
+            </td>
+
         </tr>
         
     <%  })%>

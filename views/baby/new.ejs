@@ -1,13 +1,24 @@
-<h2>Enter Information</h2>
+<%- include('../partials/header') %>
+<h2>Enter Babies Information</h2>
 <form action="/babies" method="POST">
-    <label>Name:</label>
-    <input type="text" name="name">
-    <label>Date of Birth</label>
-    <input type="date" name ="dateofbirth">
-    <label>Gender</label>
-    <select name="gender">
-        <option value="Male">Male</option>
-        <option value ="Female">Female</option>
-    </select>
-    <button type="submit">submit</button>
+    <table class="infotable">
+        <thead>
+`           <tr>
+        <th><label>Name:</label></th>
+        <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+        <th><label>Date of Birth</label></th>
+        <td><input type="date" name ="dateofbirth"></td>
+        </tr>
+        <tr>
+        <th><label>Gender</label></th>
+       <td> <select name="gender">
+            <option value="Male">Male</option>
+            <option value ="Female">Female</option>
+        </select>
+        <button type="submit">submit</button>
+    </td>
+        </tr>
+    </table>
 </form>

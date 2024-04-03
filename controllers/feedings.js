@@ -1,6 +1,8 @@
 const Feeding = require("../models/feeding");
 const Baby = require("../models/baby");
 const feeding = require("../models/feeding");
+
+
 const index = async (req, res) => {
   try {
     const feeding = await Feeding.find({});
@@ -19,7 +21,7 @@ const create = async (req, res) => {
   try {
     req.body.baby = req.params.babyid;
     await Feeding.create(req.body);
-    res.redirect("/babies");
+    res.redirect('/babies', );
   } catch (err) {
     console.log(err);
   }
@@ -36,12 +38,13 @@ const newFed = async (req, res) => {
 };
 const deleteFed = async (req, res) => {
   try {
-    Feeding.deleteOne(req.params.feedid);
-    res.redirect("/babies");
+    await Feeding.deleteOne({_id:req.params.feedid});
+    res.redirect(`/feed/babyid/${req.params.babyid}`  )
   } catch (err) {
     console.log(err);
   }
 };
+
 
 module.exports = {
   deleteFed,
