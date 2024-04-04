@@ -11,10 +11,12 @@ h2 {
 .bbname {
   text-align: center;
 }
-
+.container > img{
+  height: 40px;
+}
 .container {
   width: 80%;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .header {
@@ -126,5 +128,18 @@ td .button {
 }
 
 .space {
-  background-color: grey
+  background-color: grey;
+}
+
+.box {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  background-color: #33333341;
+}
+
+.links {
+  text-decoration: underline;
+  padding: 10px 20px;
+  color: #7b078a;
 }
