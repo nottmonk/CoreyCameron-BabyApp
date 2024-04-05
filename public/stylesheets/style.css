@@ -1,15 +1,21 @@
+
+
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Saira Condensed", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f1f1f1;
+
 }
 
 h2 {
   text-align: center;
+  font-family: "Saira Condensed", sans-serif;
 }
 .bbname {
   text-align: center;
+  font-family: "Saira Condensed", sans-serif;
 }
 .container > img{
   height: 40px;
@@ -43,7 +49,7 @@ h2 {
 }
 
 .table th {
-  background-color: #4caf50;
+  background-color: grey;
   color: #fff;
   font-weight: bold;
 }
@@ -89,7 +95,7 @@ th {
 a {
   display: block;
   margin-bottom: 20px;
-  color: #007bff;
+  color:#7b078a;
   text-decoration: none;
 }
 
